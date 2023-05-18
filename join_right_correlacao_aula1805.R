@@ -59,6 +59,8 @@ View(matriz_correlacao)
 #consigo mesma. Os elementos fora da diagonal principal representam as correlações entre os pares de variáveis.
 
 # Organizando os resultados da matriz de correlação em um ranking decrescente:
+
+valores_correlacao <- matriz_correlacao[upper.tri(matriz_correlacao)]
 ranking_correlacao <- sort(valores_correlacao, decreasing = TRUE)
 matriz_correlacao_decrescente <- matrix(ranking_correlacao, ncol = 1)
 View(matriz_correlacao_decrescente)
