@@ -22,8 +22,8 @@ df$media_h <- df$media_h*fator
 
 df
 df %>% 
-  select(Tipo = type, M_Altura = media_h, M_Peso = media_w) %>%
-  tidyr::pivot_longer(cols = c("M_Altura", "M_Peso"), names_to = "tipo", values_to = "media") %>% 
+  select(Tipo = type, Altura = media_h, Peso = media_w) %>%
+  tidyr::pivot_longer(cols = c("Altura", "Peso"), names_to = "tipo", values_to = "media") %>% 
   ggplot()+
   geom_col(aes(x = Tipo, y = media, color = tipo, fill = tipo), position = position_dodge2())+
   scale_y_continuous(
@@ -43,4 +43,3 @@ df %>%
     axis.text = element_text(size = 12),
     axis.text.x = element_text(angle=60, hjust = 1)
   )
-
